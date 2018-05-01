@@ -1,0 +1,65 @@
+﻿@page "{ID:int}"
+@model Joost.Pages.Contact.DeleteModel
+
+@{
+	ViewData["Title"] = "Delete";
+}
+
+<h2>Delete contact</h2>
+
+<h3>Are you sure you want to delete entry #@Model.Contact.ContactID?</h3>
+<div>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Contact.Name)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Contact.Name)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Contact.City)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Contact.City)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Contact.Mail)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Contact.Mail)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Contact.Phone)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Contact.Phone)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Contact.BirthDate)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Contact.BirthDate)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Contact.IsBirthYear)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Contact.IsBirthYear)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Contact.RowVersion)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Contact.RowVersion)
+		</dd>
+	</dl>
+
+	<form method="post">
+		<input type="hidden" asp-for="Contact.ContactID" />
+		<div class="form-group">
+			<button type="submit" asp-page-handler="Cancel" class="btn btn-default">Cancel</button>&nbsp;
+			<button type="submit" asp-page-handler="Delete" class="btn btn-info">Delete</button>
+		</div>
+	</form>
+</div>

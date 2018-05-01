@@ -1,0 +1,13 @@
+﻿@page
+@model AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<p><a href="https://www.google.nl/maps/@@51.9100527,5.0042775,13z/data=!5m1!1e1?hl=en" target="_blank">Verkeer</a></p>
+
+<p>Vandaag is het <input asp-for="Today" /></p>

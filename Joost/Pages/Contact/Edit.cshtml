@@ -1,0 +1,81 @@
+﻿@page
+@model Joost.Pages.Contact.EditModel
+
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<div class="row">
+	<div>
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="Contact.ContactID" />
+			<input type="hidden" asp-for="Contact.RowVersion" />
+			<div>
+				<table class="table">
+					<tr class="form-group">
+						<td><label asp-for="Contact.Name">Name</label></td>
+						<td>
+							<input asp-for="Contact.Name" size="40" autofocus />
+							<span asp-validation-for="Contact.Name" class="text-danger"></span>
+						</td>
+					</tr>
+					<tr class="form-group">
+						<td><label asp-for="Contact.IsPerson">Is a person</label></td>
+						<td><input asp-for="Contact.IsPerson" class="checkbox" /></td>
+					</tr>
+					<tr class="form-group">
+						<td><label asp-for="Contact.City">City</label></td>
+						<td>
+							<input asp-for="Contact.City" size="30" />
+							<span asp-validation-for="Contact.City" class="text-danger"></span>
+						</td>
+					</tr>
+					<tr class="form-group">
+						<td><label asp-for="Contact.Mail">Mail address</label></td>
+						<td>
+							<input asp-for="Contact.Mail" size="40" />
+							<span asp-validation-for="Contact.Mail" class="text-danger"></span>
+						</td>
+					</tr>
+					<tr class="form-group">
+						<td><label asp-for="Contact.Phone">Phone number</label></td>
+						<td>
+							<input asp-for="Contact.Phone" size="30" />
+							<span asp-validation-for="Contact.Phone" class="text-danger"></span>
+						</td>
+					</tr>
+					<tr class="form-group">
+						<td><label asp-for="Contact.BirthDate">Birth date</label></td>
+						<td>
+							<input asp-for="Contact.BirthDate" />
+							<span asp-validation-for="Contact.BirthDate" class="text-danger"></span>
+						</td>
+					</tr>
+					<tr class="form-group">
+						<td><label asp-for="Contact.IsBirthYear">Is birth year</label></td>
+						<td><input asp-for="Contact.IsBirthYear" class="checkbox" /></td>
+					</tr>
+					<tr class="form-group">
+						<td><label asp-for="Contact.DeathDate">Birth date</label></td>
+						<td>
+							<input asp-for="Contact.DeathDate" />
+							<span asp-validation-for="Contact.DeathDate" class="text-danger"></span>
+						</td>
+					</tr>
+				</table>
+				<div class="form-group">
+					<button type="submit" asp-page-handler="Save" class="btn btn-primary">Save</button>&nbsp;
+					<button type="reset" class="btn btn-info">Reset</button>&nbsp;
+					<button type="submit" asp-page-handler="Cancel" class="btn btn-info">Cancel</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

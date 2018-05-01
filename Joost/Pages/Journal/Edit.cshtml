@@ -1,0 +1,46 @@
+﻿@page "{ID:int}"
+@model Joost.Pages.Journal.EditModel
+@{
+	ViewData["Title"] = "Edit event";
+}
+
+<h2>Edit journal entry #@Model.Journal.LogID</h2>
+
+<div>
+	<section>
+		<div>
+			<form method="post">
+				<input asp-for="Journal.LogID" type="hidden" />
+				<input asp-for="Journal.RowVersion" type="hidden" />
+				<input asp-for="Journal.DTCreation" type="hidden" />
+
+				<table class="table">
+					<tr class="form-group">
+						<td><label>Date</label></td>
+						<td><input asp-for="Journal.DTStart" /></td>
+					</tr>
+					<tr class="form-group">
+						<td><label asp-for="Journal.Message">Message&nbsp;</label></td>
+						<td><textarea asp-for="Journal.Message" rows="4" cols="60" autofocus></textarea></td>
+					</tr>
+					<tr class="form-group">
+						<td><label>Event</label></td>
+						<td><input asp-for="Journal.Event" size="40" /></td>
+					</tr>
+				</table>
+
+				<div asp-validation-summary="All" class="text-danger"></div>
+
+				<div class="form-group">
+					<button type="submit" asp-page-handler="Save" class="btn btn-primary">Save</button>&nbsp;
+					<button type="reset" class="btn btn-info">Reset</button>&nbsp;
+					<button type="submit" asp-page-handler="Cancel" class="btn btn-info">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</section>
+</div>
+
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

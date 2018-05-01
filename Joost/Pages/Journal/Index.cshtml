@@ -1,0 +1,53 @@
+﻿@page "{searchString?}"
+@model Joost.Pages.Journal.IndexModel
+@using Joost.Data
+
+@{
+	ViewData["Title"] = "Journal index";
+}
+
+<h2>Journal</h2>
+
+<p>
+	<a asp-page="/Journal/Create">Create</a>
+</p>
+
+<form>
+	<div>
+		<select asp-for="SearchEvent" asp-items="Model.Events">
+			<option value="">All</option>
+		</select>
+
+		Message: <input type="text" name="SearchString" autofocus>
+		<input type="submit" value="Filter" />
+	</div>
+</form>
+
+<form method="post">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Message</th>
+				<th>Event</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var journal in Model.Journals)
+			{
+				<tr>
+					<td>@journal.DTStart</td>
+					<td>@journal.Message.MaxLength(85)</td>
+					<td>@journal.Event</td>
+					<td>
+						<a asp-page="./Edit" asp-route-id="@journal.LogID">Edit</a> |
+						<a asp-page="./Delete" asp-route-id="@journal.LogID">Delete</a>
+					</td>
+
+				</tr>
+			}
+		</tbody>
+	</table>
+
+</form>
