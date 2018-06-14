@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Joost", "Joost\Joost.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoostApp", "JoostApp\JoostApp.csproj", "{215A47EC-53B5-4667-B350-FE4210236750}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownloadMasterTable", "DownloadMasterTable\DownloadMasterTable.csproj", "{90574BCE-490B-418B-89D9-96213BA2A762}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{215A47EC-53B5-4667-B350-FE4210236750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{215A47EC-53B5-4667-B350-FE4210236750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{215A47EC-53B5-4667-B350-FE4210236750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90574BCE-490B-418B-89D9-96213BA2A762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90574BCE-490B-418B-89D9-96213BA2A762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90574BCE-490B-418B-89D9-96213BA2A762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90574BCE-490B-418B-89D9-96213BA2A762}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
