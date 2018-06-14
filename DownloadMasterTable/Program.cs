@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
+using System.Security.Policy;
 
 /// <summary>
 /// Download the event table from the database. The data is saved as an Json file on a OneDrive folder by default.
@@ -56,6 +57,9 @@ namespace DownloadMasterTable
 				}
 				Console.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")} Completed list events");
 
+				//Hash hash = new Hash(Events);
+				//Events.Hash = hash.ToString(); 
+
 				var json = new DataContractJsonSerializer(typeof(EventTable));
 				using (FileStream stream = new FileStream(DownloadFile, FileMode.CreateNew))
 				{
@@ -83,6 +87,7 @@ namespace DownloadMasterTable
 	{
 		public string ComputerName { get; set; }
 		public IList<string> Event { get; set; }
+		public string Hash { get; set; } = "-1";
 	}
 	#endregion
 
