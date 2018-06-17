@@ -23,6 +23,21 @@ namespace JoostApp
 		public MainWindow()
 		{
 			InitializeComponent();
+			//Make the menu width depending to the width of the window
+			menuMain.Width = this.Width;
+		}
+
+		private void OpenAbout(object sender, RoutedEventArgs e)
+		{
+			string msg = $"Application: Joost Appplication\n" +
+				$"Author: Kees Hiemstra\n" +
+				$"Version: 0.0.1";
+			MessageBox.Show(msg, "About");
+		}
+
+		private void ExitApplication(object sender, RoutedEventArgs e)
+		{
+			Close();
 		}
 	}
 }

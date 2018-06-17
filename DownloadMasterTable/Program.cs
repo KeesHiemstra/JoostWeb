@@ -37,6 +37,7 @@ namespace DownloadMasterTable
 			}
 			#endregion
 
+			#region Create Json file with all events
 			string DownloadFile = $"{DownloadFolder}\\Events_{DateTime.Now.ToString("yyyy-MM-dd HHmmss")}.json";
 			Console.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")} Download filename: {DownloadFile}");
 
@@ -75,6 +76,7 @@ namespace DownloadMasterTable
 			{
 				Console.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")} File is NOT created");
 			}
+			#endregion
 
 			Console.WriteLine();
 			Console.Write("Press any key");
