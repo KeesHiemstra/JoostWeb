@@ -24,7 +24,6 @@ namespace JoostApp
 		{
 			InitializeComponent();
 			//Make the menu width depending to the width of the window
-			menuMain.Width = this.Width;
 		}
 
 		private void OpenAbout(object sender, RoutedEventArgs e)
