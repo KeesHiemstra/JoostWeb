@@ -42,7 +42,7 @@ namespace Joost.Pages.Journal
 				_journals = _journals.Where(s => s.Event == searchEvent);
 			}
 
-			//Run distict events
+			//Run distinct events
 			Events = new SelectList(await eventQuery.Distinct().ToListAsync());
 			
 			//Run query in SQL

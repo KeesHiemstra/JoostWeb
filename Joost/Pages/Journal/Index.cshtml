@@ -30,6 +30,7 @@
 				<th>Date</th>
 				<th>Message</th>
 				<th>Event</th>
+        <th>Since</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -37,9 +38,10 @@
 			@foreach (var journal in Model.Journals)
 			{
 				<tr>
-					<td>@journal.DTStart</td>
-					<td>@journal.Message.MaxLength(85)</td>
+					<td>@journal.DTStart.DisplaySimpleDate()</td>
+					<td>@journal.Message.MaxLength(80)</td>
 					<td>@journal.Event</td>
+          <td>@journal.DTStart.DisplayEventAge()</td>
 					<td>
 						<a asp-page="./Edit" asp-route-id="@journal.LogID">Edit</a> |
 						<a asp-page="./Delete" asp-route-id="@journal.LogID">Delete</a>
