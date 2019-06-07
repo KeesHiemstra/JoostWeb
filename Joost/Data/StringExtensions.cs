@@ -92,11 +92,39 @@ namespace Joost.Data
 				Year = DeathDate.Value.Year;
 			}
 
-			if (input.Value.DayOfYear > Today) { Year--; }
+			if (input.Value.DayOfYear >= Today) { Year--; }
 
 			return string.Format("{0}{1}",
 				(Year - input.Value.Year).ToString(),
 				DeathDate != null ? " (†)" : string.Empty);
+		}
+		#endregion
+
+		#region DisplaySimpleDate
+		public static string DisplaySimpleDate(this DateTime? date)
+		{
+			string result = ((DateTime)date).ToString("yyyy-MM-dd HH:mm").Substring(0, 16);
+			return result;
+		}
+		#endregion
+
+		#region DisplayEventAge
+		public static string DisplayEventAge(this DateTime? date)
+		{
+			string result = string.Empty;
+			TimeSpan eventAge = DateTime.Now - (DateTime)date;
+			
+			
+			if (eventAge.Days > 0)
+			{
+				result += ((int)eventAge.TotalDays).ToString() + " d ";
+			}
+			else
+			{
+				result += ((int)eventAge.Hours).ToString() + " h ";
+			}
+
+			return result.Trim();
 		}
 		#endregion
 	}
