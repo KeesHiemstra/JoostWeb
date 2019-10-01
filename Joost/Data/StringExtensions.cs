@@ -169,7 +169,8 @@ namespace Joost.Data
 			{
 				months--;
 
-				DateTime dateReference = new DateTime(DateReference.Year, DateReference.Month - 1, DateMeasure.Day);
+				DateTime dateReference = new DateTime(DateReference.Year, DateReference.Month, DateMeasure.Day);
+        dateReference.AddMonths(-1);
 				days = (DateReference - dateReference).Days;
 			}
 
