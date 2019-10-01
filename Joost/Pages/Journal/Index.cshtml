@@ -41,7 +41,7 @@
           <td>@journal.DTStart.DisplaySimpleDate()</td>
           <td>@journal.Message.MaxLength(80)</td>
           <td>@journal.Event</td>
-          <td title="@journal.DTStart.DisplaySimpleDate()">@journal.DTStart.DisplaySimpleDate()</td>
+          <td title="@journal.DTStart.DisplaySimpleDate()">@journal.DTStart.DateDiff()</td>
           <td>
             <a asp-page="./Edit" asp-route-id="@journal.LogID">Edit</a> |
             <a asp-page="./Delete" asp-route-id="@journal.LogID">Delete</a>
