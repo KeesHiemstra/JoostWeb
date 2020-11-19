@@ -1,0 +1,65 @@
+﻿<Window x:Class="JoostApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JoostApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="10"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<!-- 0: Menu -->
+			<RowDefinition Height="19"/>
+			<!-- 1: DataGrid -->
+			<RowDefinition Height="*"/>
+			<!-- 2: Buttons -->
+			<RowDefinition Height="auto"/>
+			<!-- 3: Bottom -->
+			<RowDefinition Height="19"/>
+		</Grid.RowDefinitions>
+		
+		<Menu Name="menuMain" 
+					Grid.Column="0"
+					Grid.ColumnSpan="3">
+			
+			<MenuItem Header="File">
+				<Separator HorizontalAlignment="Center"/>
+				<MenuItem Name="menuExit"
+									Header="Exit"
+									Click="ExitApplication"/>
+			</MenuItem>
+			
+			<MenuItem Header="Add"/>
+			
+			<Separator VerticalAlignment="Center" />
+			
+			<MenuItem Header="Help">
+				<MenuItem Name="menuAbout"
+									Header="About" 
+									HorizontalAlignment="Left" 
+									Height="Auto" 
+									Width="Auto"
+									Click="OpenAbout"/>
+			</MenuItem>
+		</Menu>
+
+		<DataGrid x:Name="DataGrid"
+							Grid.Column="1"
+							Grid.Row="2"
+							Grid.RowSpan="4"
+							/>
+		<StackPanel Grid.Column="1"
+								Grid.Row="2"
+								
+								FlowDirection="LeftToRight" HorizontalAlignment="Left"
+								>
+			<Button Content="Create"
+							Width="Auto"/>
+		</StackPanel>
+	</Grid>
+</Window>
