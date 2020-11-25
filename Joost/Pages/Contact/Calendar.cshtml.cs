@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Joost.Data;
-using Joost.Model;
 
 namespace Joost.Pages.Contact
 {
@@ -19,12 +15,14 @@ namespace Joost.Pages.Contact
 		//All record from Calender table
 		public IList<Model.Contact> Contact { get; private set; }
 
-		public async Task OnGetAsync()
+		public void OnGet()
 		{
-			Contact = await _context.Contact
+			//It can't await and an extension together
+			Contact = _context.Contact
 				.AsNoTracking()
+				.AsEnumerable()
 				.OrderBy(m => m.BirthDate.OrderByMonthDayRotering())
-				.ToListAsync();
+				.ToList();
 		}
 	}
 }
