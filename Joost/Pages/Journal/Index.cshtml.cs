@@ -48,8 +48,8 @@ namespace Joost.Pages.Journal
 			//Run query in SQL
 			Journals = await _journals
 				.AsNoTracking()
-				.OrderByDescending(l => l.DTCreation)
 				.OrderByDescending(l => l.DTStart)
+				.OrderByDescending(l => l.DTCreation)
 				.ToListAsync();
 		}
 		#endregion
