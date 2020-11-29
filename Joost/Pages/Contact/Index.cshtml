@@ -11,8 +11,8 @@
 	<a asp-page="Create">Create</a> |
 	<a asp-page="Calendar">Calendar</a>
 </p>
-<table class="table">
-	<thead>
+<table class="table table-hover table-sm">
+	<thead class="thead-dark">
 		<tr>
 			<th>
 				@Html.DisplayNameFor(model => model.Contact[0].Name)
@@ -41,33 +41,33 @@
 	<tbody>
 		@foreach (var item in Model.Contact)
 		{
-		<tr>
-			<td>
-				@Html.DisplayFor(modelItem => item.Name)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.IsPerson)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.City)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.Mail)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.Phone)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.BirthDate)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.IsBirthYear)
-			</td>
-			<td>
-				<a asp-page="./Edit" asp-route-id="@item.ContactID">Edit</a> |
-				<a asp-page="./Delete" asp-route-id="@item.ContactID">Delete</a>
-			</td>
-		</tr>
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.IsPerson)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.City)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Mail)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Phone)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.BirthDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.IsBirthYear)
+				</td>
+				<td>
+					<a asp-page="./Edit" asp-route-id="@item.ContactID">Edit</a> |
+					<a asp-page="./Delete" asp-route-id="@item.ContactID">Delete</a>
+				</td>
+			</tr>
 		}
 	</tbody>
 </table>
