@@ -49,7 +49,7 @@ namespace Joost.Pages.Journal
 			Journals = await _journals
 				.AsNoTracking()
 				.OrderByDescending(l => l.DTStart)
-				.OrderByDescending(l => l.DTCreation)
+				.ThenByDescending(l => l.DTCreation)
 				.ToListAsync();
 		}
 		#endregion
