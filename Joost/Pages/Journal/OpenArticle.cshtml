@@ -1,0 +1,44 @@
+﻿@page
+@model Joost.Pages.Journal.OpenArticleModel
+
+@{
+	ViewData["Title"] = "Create Open article";
+}
+
+<h2>Create Open article</h2>
+
+<div class="row">
+	<section>
+		<div class="col-md-6">
+			<form method="post">
+				<input asp-for="Journal.DTCreation" type="hidden" />
+				<table class="table">
+					<tr class="form-group">
+						<td><label asp-for="Journal.DTStart">Date</label></td>
+						<td><input asp-for="Journal.DTStart" value="@(DateTime.Now.ToString("yyyy-MM-ddTHH:mm"))" /></td>
+					</tr>
+					<tr class="form-group">
+						<td><label asp-for="Journal.Message">Message&nbsp;</label></td>
+						<td>
+							<select asp-for="Journal.Message" asp-items="Model.Articles" autofocus></select>
+							<span asp-validation-for="Journal.Message" class="text-danger"></span>
+						</td>
+					</tr>
+					<tr class="form-group">
+						<td><label asp-for="Journal.Event">Event</label></td>
+						<td><input asp-for="Journal.Event" size="40" value="Aangebroken" readonly /></td>
+					</tr>
+				</table>
+
+				<div asp-validation-summary="All" class="text-danger"></div>
+
+				<div class="form-group">
+					<button type="submit" asp-page-handler="Save" class="btn btn-primary">Save</button>&nbsp;
+					<!--<button type="reset" class="btn btn-info">Reset</button>&nbsp;-->
+					<button type="submit" asp-page-handler="Cancel" class="btn btn-info">Cancel</button>
+				</div>
+
+			</form>
+		</div>
+	</section>
+</div>
